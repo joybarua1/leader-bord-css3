@@ -7,22 +7,31 @@ body{
 }
 main{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .container{
     background-color: #ffffff;
     width: 870px;
     padding: 30px;
+    margin-top: 21px;
+    border-radius: 5px;
+}
+hr{
+    border: 1px solid #9F9F9F;
+    margin-bottom: 27px;
 }
 /* top players style */
 .section-title{
     color: #562EFF;
     font-size: 24;
+    margin-top: 0;
 }
 .players{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-row-gap: 30px;
 }
 .player{
     display: flex;
@@ -34,4 +43,97 @@ main{
 }
 .player h3{
     margin-left: 16px;
+}
+
+
+/* top blog styls start */
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 26px;
+}
+.blog{
+    display: flex;
+}
+.blog img{
+    width: 177px;
+    height: 170px;
+    
+}
+.blog-info{
+    margin-left: 16px;
+}
+.blog-title{
+    font-size: 20px;
+}
+.blog-author{
+    font-size: 16px;
+    color:  #9F9F9F;
+}
+.blog-author a{
+    text-decoration: none;
+    font-size: 16px;
+    color:  #562EFF;
+}
+
+/* courses styles */
+
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 24px;
+}
+.course-bannar img{
+    width: 224px;
+    height: 104px;
+}
+.course-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fa-star{
+    font-size: 12px;
+}
+.fa-star.filled{
+    color: #FFC014;
+}
+.fas{
+    color: #AEAEAE;
+}
+.course-duiration{
+    background-color: #ff4a5f46;;
+    color: #FF4A60;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+
+/*....................... 
+Media Queries 
+.......................*/
+
+/* Mobile Devices */
+
+@media only screen and (max-width:688px) {
+    .container{
+        width: 100%;
+    }
+    .players, .blogs, .courses{
+      grid-template-columns: repeat(1, 1fr);
+  } 
+  .player, .blog{
+      flex-direction: column;
+  }
+}
+
+/* Tablet Devices */
+
+@media only screen and (min-width: 688px) and (max-width: 992px){
+    .container{
+        width: 100%;
+    }
+    .players, .courses{
+        grid-template-columns: repeat(2, 1fr);
+    }    
 }
